@@ -193,17 +193,35 @@ form button:hover {
     }
 
     .day-column ul li {
-        flex: 1;
-        margin: 3px 0;
+        display: flex;
+        flex-direction: row; /* time + class side by side */
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px 8px;
+        min-height: 50px;
+        gap: 10px;
+    }
+
+
+    /* Time block inside the class card */
+    .class-card::before {
+        content: attr(data-time);
+        flex-shrink: 0;
+        width: 90px; /* fixed width for time */
+        font-weight: 600;
+        text-align: left;
+        color: #2f3640;
     }
 
     .class-card {
+        flex: 1; /* rest of the space */
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 6px 8px;
-        min-height: 48px;
+        min-height: 50px;
     }
+
 
     /* Form adjustments */
     form {
