@@ -214,7 +214,7 @@ form button:hover {
     }
 
     .class-card {
-        flex: 1; /* rest of the space */
+        flex: 1; /* remaining space for class content */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -241,6 +241,7 @@ form button:hover {
         font-size: 0.75rem;
         margin: 2px 2px 0 0;
     }
+    .time-column { display: none; }
 }
 
 /* Optional: scroll for horizontal overflow if still too wide */
