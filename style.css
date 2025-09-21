@@ -142,14 +142,98 @@ form button:hover {
 /* Responsive */
 @media (max-width: 900px) {
     .timetable-grid {
-        grid-template-columns: 100px repeat(2, 1fr);
+        grid-template-columns: 100px repeat(2, 1fr); /* keep 2 days side by side */
+        gap: 8px;
+    }
+    form {
+        flex-direction: column;
+        gap: 8px;
+    }
+    form input, form select, form button {
+        width: 100%;
     }
 }
 
+/* Mobile-friendly horizontal layout for timetable */
 @media (max-width: 600px) {
     .timetable-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
-    .time-column h3, .day-column h3 { font-size: 1rem; }
-    .time-column ul li, .class-card { min-height: 48px; }
+
+    .time-column, .day-column {
+        display: flex;
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .day-column ul, .time-column ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Each row: time + classes aligned horizontally */
+    .day-column ul li, .time-column ul li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+
+    /* Wrap time and class side by side */
+    .time-column ul li {
+        width: 90px; /* fixed width for time */
+        flex-shrink: 0;
+        text-align: left;
+        margin: 3px 5px 3px 0;
+    }
+
+    .day-column ul li {
+        flex: 1;
+        margin: 3px 0;
+    }
+
+    .class-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 6px 8px;
+        min-height: 48px;
+    }
+
+    /* Form adjustments */
+    form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    form input, form select, form button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Buttons smaller */
+    .action-btn {
+        padding: 2px 5px;
+        font-size: 0.75rem;
+        margin: 2px 2px 0 0;
+    }
+}
+
+/* Optional: scroll for horizontal overflow if still too wide */
+@media (max-width: 480px) {
+    .timetable-grid {
+        overflow-x: auto;
+        display: block;
+    }
+    .time-column, .day-column {
+        min-width: 250px;
+        display: inline-block;
+        vertical-align: top;
+    }
 }
