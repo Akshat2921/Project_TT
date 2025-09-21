@@ -248,11 +248,75 @@ form button:hover {
 @media (max-width: 480px) {
     .timetable-grid {
         overflow-x: auto;
-        display: block;
+        display: flex; /* use flex so 600px style applies */
+        flex-direction: column;
+        gap: 10px;
     }
-    .time-column, .day-column {
-        min-width: 250px;
-        display: inline-block;
-        vertical-align: top;
+
+    .day-column {
+        display: flex;
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .day-column ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .day-column ul li {
+        display: flex;
+        flex-direction: row; /* time + class side by side */
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px 8px;
+        min-height: 50px;
+        gap: 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Time block inside the class card */
+    .class-card::before {
+        content: attr(data-time);
+        flex-shrink: 0;
+        width: 90px; /* fixed width for time */
+        font-weight: 600;
+        text-align: left;
+        color: #2f3640;
+    }
+
+    .class-card {
+        flex: 1; /* remaining space for class content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 6px 8px;
+        min-height: 50px;
+    }
+
+    /* Hide time column on small screens */
+    .time-column { 
+        display: none; 
+    }
+
+    /* Form adjustments */
+    form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    form input, form select, form button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Buttons smaller */
+    .action-btn {
+        padding: 2px 5px;
+        font-size: 0.75rem;
+        margin: 2px 2px 0 0;
     }
 }
