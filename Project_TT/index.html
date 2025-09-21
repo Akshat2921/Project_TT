@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Timetable Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weekly Timetable Management</h1>
+  </header>
+
+  <main>
+    <!-- Form -->
+    <section class="form-section">
+      <h2>Add / Edit Class</h2>
+      <form id="timetableForm">
+        <input type="text" id="subject" placeholder="Subject Name" required>
+        <input type="text" id="professor" placeholder="Professor" required>
+        <select id="day" required>
+          <option value="">Select Day</option>
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+        </select>
+      
+        <!-- Start Time -->
+<input type="time" id="startTime" required style="width:120px;">
+<select id="startAMPM" required>
+  <option>AM</option>
+  <option>PM</option>
+</select>
+
+<!-- End Time -->
+<input type="time" id="endTime" required style="width:120px;">
+<select id="endAMPM" required>
+  <option>AM</option>
+  <option>PM</option>
+</select>
+
+      
+        <button type="submit">Save</button>
+      </form>
+      
+      <p id="errorMsg" class="error"></p>
+    </section>
+
+    <!-- Weekly Timetable -->
+    <section class="table-section">
+      <h2>Weekly Schedule</h2>
+      <div class="timetable-grid">
+        <!-- Time column -->
+        <div class="time-column" id="Time"><h3>Time</h3><ul></ul></div>
+    
+        <!-- Day columns (Mon-Fri) -->
+        <div class="day-column" id="Monday"><h3>Monday</h3><ul></ul></div>
+        <div class="day-column" id="Tuesday"><h3>Tuesday</h3><ul></ul></div>
+        <div class="day-column" id="Wednesday"><h3>Wednesday</h3><ul></ul></div>
+        <div class="day-column" id="Thursday"><h3>Thursday</h3><ul></ul></div>
+        <div class="day-column" id="Friday"><h3>Friday</h3><ul></ul></div>
+    </div>
+    
+    </section>
+  </main>
+
+  <footer>
+    <p>Developed by Akshat Jain | IIIT Nagpur</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

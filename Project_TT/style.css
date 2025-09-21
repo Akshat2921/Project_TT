@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e0e5eb, #cfd6e0, #dbe7f0); /* slightly richer and smoother gradient */
+    color: #2f3640;
+}
+
+
+/* Header remains slightly vibrant for contrast */
+header {
+    background: linear-gradient(90deg, #273c75, #3c5aa6);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    background: #44bd32;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background: #27ae60;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Weekly Grid */
+.timetable-grid {
+    display: grid;
+    grid-template-columns: 120px repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.time-column,
+.day-column {
+    background: linear-gradient(120deg, #f5f6fa, #dcdde1);
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+/* Time column header */
+.time-column h3,
+.day-column h3 {
+    text-align: center;
+    margin: 5px 0;
+    background: linear-gradient(90deg, #273c75, #44bd32);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.time-column ul,
+.day-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+/* Time slot item (left column) */
+.time-column ul li {
+    background: #f5f6fa;
+    border-bottom: 2px solid #7f8fa6;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Class card inside day columns */
+.class-card {
+    background: white;
+    border-bottom: 2px solid #7f8fa6; /* horizontal line to separate classes */
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.action-btn {
+    cursor: pointer;
+    padding: 3px 7px;
+    border-radius: 4px;
+    margin: 4px 3px 0 0;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.edit {
+    background: #f39c12;
+    color: white;
+}
+
+.delete {
+    background: #e84118;
+    color: white;
+}
+
+.highlight {
+    background: #7bed9f;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .timetable-grid {
+        grid-template-columns: 100px repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .timetable-grid {
+        grid-template-columns: 1fr;
+    }
+    .time-column h3, .day-column h3 { font-size: 1rem; }
+    .time-column ul li, .class-card { min-height: 48px; }
+}
