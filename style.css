@@ -248,7 +248,7 @@ form button:hover {
 @media (max-width: 480px) {
     .timetable-grid {
         overflow-x: auto;
-        display: flex; /* use flex so 600px style applies */
+        display: flex; /* keep 600px style */
         flex-direction: column;
         gap: 10px;
     }
@@ -296,9 +296,9 @@ form button:hover {
         min-height: 50px;
     }
 
-    /* Hide time column on small screens */
-    .time-column { 
-        display: none; 
+    /* Hide time column for small screens */
+    .time-column {
+        display: none;
     }
 
     /* Form adjustments */
