@@ -116,7 +116,7 @@ function renderTable() {
             const item = timetable.find(t => t.day === day && `${t.startTime} - ${t.endTime}` === slot);
             if (item) {
                 li.className = "class-card";
-                li.setAttribute("data-time", `${item.startDisplay} - ${item.endDisplay}`); // <-- add this
+                li.setAttribute("data-time", `${item.startDisplay} - ${item.endDisplay}`);
                 li.innerHTML = `
                     <div><strong>${item.subject}</strong></div>
                     <div>${item.professor}</div>
